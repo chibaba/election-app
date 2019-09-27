@@ -17,53 +17,53 @@ exports.default = function (passport) {
     });
   });
 
-  passport.use(new _passportTwitter.Strategy(_constants2.default.TWITTER_STRATEGY, function (req, token, tokenSecret, profile, done) {
-    process.nextTick(function () {
-      if (!req.user) {
-        _user2.default.findOne({ 'twitter.id': profile.id }, function (err, user) {
-          if (err) return done(err);
-          if (user) {
-            if (!user.twitter.token) {
-              user.twitter.token = token;
-              user.twitter.username = profile.username;
-              user.twitter.displayName = profile.displayName;
-              user.save(function () {
-                if (err) return done(err);
-                return done(null, user);
-              });
-            }
-            return done(null, user);
-          }
+//   passport.use(new _passportTwitter.Strategy(_constants2.default.TWITTER_STRATEGY, function (req, token, tokenSecret, profile, done) {
+//     process.nextTick(function () {
+//       if (!req.user) {
+//         _user2.default.findOne({ 'twitter.id': profile.id }, function (err, user) {
+//           if (err) return done(err);
+//           if (user) {
+//             if (!user.twitter.token) {
+//               user.twitter.token = token;
+//               user.twitter.username = profile.username;
+//               user.twitter.displayName = profile.displayName;
+//               user.save(function () {
+//                 if (err) return done(err);
+//                 return done(null, user);
+//               });
+//             }
+//             return done(null, user);
+//           }
 
-          // if no user is found create one
-          var newUser = new _user2.default();
+//           // if no user is found create one
+//           var newUser = new _user2.default();
 
-          newUser.twitter.id = profile.id;
-          newUser.twitter.token = token;
-          newUser.twitter.username = profile.username;
-          newUser.twitter.displayName = profile.displayName;
+//           newUser.twitter.id = profile.id;
+//           newUser.twitter.token = token;
+//           newUser.twitter.username = profile.username;
+//           newUser.twitter.displayName = profile.displayName;
 
-          newUser.save(function () {
-            if (err) return done(err);
-            return done(null, newUser);
-          });
-        });
-      } else {
-        // when user already exists and is logged in
-        var user = req.user;
+//           newUser.save(function () {
+//             if (err) return done(err);
+//             return done(null, newUser);
+//           });
+//         });
+//       } else {
+//         // when user already exists and is logged in
+//         var user = req.user;
 
-        user.twitter.id = profile.id;
-        user.twitter.token = token;
-        user.twitter.username = profile.username;
-        user.twitter.displayName = profile.displayName;
+//         user.twitter.id = profile.id;
+//         user.twitter.token = token;
+//         user.twitter.username = profile.username;
+//         user.twitter.displayName = profile.displayName;
 
-        user.save(function (err) {
-          if (err) return done(err);
-          return done(null, user);
-        });
-      }
-    });
-  }));
+//         user.save(function (err) {
+//           if (err) return done(err);
+//           return done(null, user);
+//         });
+//       }
+//     });
+//   }));
 
   //= ==========local signup===================
 

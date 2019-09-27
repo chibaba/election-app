@@ -21,55 +21,55 @@ export default function (passport) {
     });
   });
 
-  passport.use(
-		new TwitterStrategy(constants.TWITTER_STRATEGY, (req, token, tokenSecret, profile, done) => {
-  process.nextTick(() => {
-    if (!req.user) {
-      User.findOne({ 'twitter.id': profile.id }, (err, user) => {
-        if (err) return done(err);
-        if (user) {
-          if (!user.twitter.token) {
-            user.twitter.token = token;
-            user.twitter.username = profile.username;
-            user.twitter.displayName = profile.displayName;
-            user.save(() => {
-              if (err) return done(err);
-              return done(null, user);
-            });
-          }
-          return done(null, user);
-        }
+//   passport.use(
+// 		new TwitterStrategy(constants.TWITTER_STRATEGY, (req, token, tokenSecret, profile, done) => {
+//   process.nextTick(() => {
+//     if (!req.user) {
+//       User.findOne({ 'twitter.id': profile.id }, (err, user) => {
+//         if (err) return done(err);
+//         if (user) {
+//           if (!user.twitter.token) {
+//             user.twitter.token = token;
+//             user.twitter.username = profile.username;
+//             user.twitter.displayName = profile.displayName;
+//             user.save(() => {
+//               if (err) return done(err);
+//               return done(null, user);
+//             });
+//           }
+//           return done(null, user);
+//         }
 
-						// if no user is found create one
-        const newUser = new User();
+// 						// if no user is found create one
+//         const newUser = new User();
 
-        newUser.twitter.id = profile.id;
-        newUser.twitter.token = token;
-        newUser.twitter.username = profile.username;
-        newUser.twitter.displayName = profile.displayName;
+//         newUser.twitter.id = profile.id;
+//         newUser.twitter.token = token;
+//         newUser.twitter.username = profile.username;
+//         newUser.twitter.displayName = profile.displayName;
 
-        newUser.save(() => {
-          if (err) return done(err);
-          return done(null, newUser);
-        });
-      });
-    } else {
-					// when user already exists and is logged in
-      const user = req.user;
+//         newUser.save(() => {
+//           if (err) return done(err);
+//           return done(null, newUser);
+//         });
+//       });
+//     } else {
+// 					// when user already exists and is logged in
+//       const user = req.user;
 
-      user.twitter.id = profile.id;
-      user.twitter.token = token;
-      user.twitter.username = profile.username;
-      user.twitter.displayName = profile.displayName;
+//       user.twitter.id = profile.id;
+//       user.twitter.token = token;
+//       user.twitter.username = profile.username;
+//       user.twitter.displayName = profile.displayName;
 
-      user.save((err) => {
-        if (err) return done(err);
-        return done(null, user);
-      });
-    }
-  });
-}),
-	);
+//       user.save((err) => {
+//         if (err) return done(err);
+//         return done(null, user);
+//       });
+//     }
+//   });
+// }),
+// 	);
 
 	//= ==========local signup===================
 
