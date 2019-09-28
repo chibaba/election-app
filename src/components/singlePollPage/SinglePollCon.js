@@ -6,7 +6,7 @@ import axios from 'axios';
 import { deletePoll, postVote, postAnswer } from '../../ducks/polls';
 import { fetchUser } from '../../ducks/user';
 import SinglePoll from './SinglePoll';
-import loadAgain from '../../app';
+// import loadAgain from '../../app';
 
 class SinglePollCon extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class SinglePollCon extends React.Component {
       poll: {},
       fetched: false,
     };
-    loadAgain();
+    // loadAgain();
     this.props.fetchUser();
   }
 

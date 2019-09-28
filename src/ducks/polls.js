@@ -115,7 +115,7 @@ export function postPoll(question, answers) {
 			.post('/api/polls/new', addPoll(question, answers))
 			.then(dispatch(addPoll(question, answers)))
 			.catch((error) => {
-  console.warn(err);
+  console.warn(error);
 });
 }
 
@@ -125,7 +125,7 @@ export function postAnswer(url, questionId, answers) {
 			.post(`/api/polls/${url}/new`, { answer: answers[0].answer, votes: 1 })
 			.then(dispatch(addEditPoll(questionId, answers)))
 			.catch((error) => {
-  console.warn(err);
+  console.warn(error);
 });
 }
 
@@ -135,7 +135,7 @@ export function postVote(url, aID, questionId, votes) {
 			.post(`/api/polls/${url}/${aID}/vote`)
 			.then(dispatch(updateVotes(questionId, aID, votes)))
 			.catch((error) => {
-  console.warn(err);
+  console.warn(error);
 });
 }
 

@@ -8,12 +8,12 @@ import { updateVotes, addPoll, fetchPolls, postPoll } from '../../ducks/polls';
 import { fetchUser } from '../../ducks/user';
 import OnePoll from './OnePoll';
 import NewPollCon from './NewPollCon';
-import loadAgain from '../../app';
+// import loadAgain from '../../app';
 
 class Polls extends React.Component {
   constructor(props) {
     super(props);
-    loadAgain();
+    // loadAgain();
     this.props.fetchPolls();
     this.props.fetchUser();
   }

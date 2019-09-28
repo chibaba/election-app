@@ -1,10 +1,10 @@
 import React from 'react';
 
-import loadAgain from '../app';
+// import loadAgain from '../app';
 
 export default class Lost extends React.Component {
   componentDidMount() {
-    loadAgain();
+   // loadAgain();
   }
 
   render() {

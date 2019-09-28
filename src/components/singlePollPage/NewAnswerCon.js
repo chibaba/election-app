@@ -1,6 +1,6 @@
 import React from 'react';
 import shortid from 'shortid';
-import loadAgain from '../../app';
+// import loadAgain from '../../app';
 
 import NewAnswer from './NewAnswer';
 
@@ -10,7 +10,7 @@ export default class NewAnswerCon extends React.Component {
 		this.state = {
 			answers: [{ answer: '', votes: 1 }],
 		};
-		loadAgain();
+		// loadAgain();
 	}
 
 	reset() {

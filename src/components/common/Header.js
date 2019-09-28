@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Sidebar from '../sidebar/Sidebar';
-import loadAgain from '../../app';
+// import loadAgain from '../../index';
 
 export default class Header extends React.Component {
   componentDidMount() {
-    loadAgain();
+    // loadAgain();
   }
 
   render() {

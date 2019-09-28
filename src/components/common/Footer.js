@@ -4,15 +4,14 @@ const Footer = () =>
   (<footer className="page-footer blue-grey darken-4">
     <div className="container teal-text">
       <div className="col s6">
-        <h6>A Free Code Camp Challenge</h6>
+        <h6>Voting application</h6>
         <h5>
-					written by <strong>Daniel Deutsch</strong>
         </h5>
       </div>
     </div>
     <div className="footer-copyright">
       <div className="container">
-        <a
+        {/* <a
           href="https://github.com/DDCreationStudios"
           target="_blank"
           className="teal-text text-lighten-4"
@@ -67,7 +66,7 @@ const Footer = () =>
           rel="noreferrer noopener"
         >
 					Site
-				</a>
+				</a> */}
       </div>
     </div>
   </footer>);
