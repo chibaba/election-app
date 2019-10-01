@@ -27,7 +27,7 @@ export default class Header extends React.Component {
           data-activates="slide-out"
           className="button-collapse show-on-large teal-text text-lighten-3"
         >
-          <i className="material-icons right teal-text text-lighten-3">perm_identity</i>Identified
+          <i className="material-icons right teal-text text-lighten-3">Show_identity</i>Identified
 					as: Visitor
 				</a>
       );
@@ -41,7 +41,7 @@ export default class Header extends React.Component {
               <i className="material-icons right orange-text">play_for_work</i>
             </a>
             <Link to="/" className="brand-logo teal-text">
-              <i className="material-icons left">poll</i>Dynamic Web Voting App
+              <i className="material-icons left">poll</i>Election Voting App
 						</Link>
             <ul className="right hide-on-med-and-down teal-text">
               <li>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import loadAgain from '../../app';
+// import loadAgain from '../../index';
 
 export default class Home extends React.Component {
   componentDidMount() {
@@ -27,7 +27,7 @@ export default class Home extends React.Component {
                   <p>Everyone can vote, add another option and see the results</p>
                 </div>
                 <div className="card-action">
-                  <Link to="/polls">Check It Out</Link>
+                  <Link to="/Poll">Check It Out</Link>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default class Home extends React.Component {
                   <p>Experience your results with updated charts and Databases</p>
                 </div>
                 <div className="card-action">
-                  <Link to="/polls">Check It Out</Link>
+                  <Link to="/Polls">Check It Out</Link>
                 </div>
               </div>
             </div>
