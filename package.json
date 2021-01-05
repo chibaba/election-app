@@ -9,7 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "babel-cli": "^6.24.1",
     "dotenv": "^4.0.0",
     "react": "^16.9.0",
